@@ -65,7 +65,9 @@
 }
 
 .title{
+  position: relative;
+  z-index: 99;
   font-size: 25px;
-  color: white;
+  color: black;
   font-weight: bold;
 }

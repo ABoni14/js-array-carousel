@@ -62,11 +62,11 @@ next.addEventListener("click", function(){
 // CICLO ARRAY DESCRIZIONE FOTO
 for(let i = 0; i < title.length; i++){
   console.log(title[i]);
-  const titleImg = document.createElement("h3");
+  const titleImg = document.createElement("div");
+  item.append(titleImg);
   if(i === contatore){
     titleImg.classList.add("title");
   }
 
-  titleImg.innerHTML = `<div>${title[i]}</div>`;
-  item.append(titleImg);
+  titleImg.innerHTML = `<h3>${title[i]}</h3>`;
 }
