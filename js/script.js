@@ -57,3 +57,16 @@ next.addEventListener("click", function(){
   item[contatore].classList.add("active");
   itemSmall[contatore].classList.add("active-img")
 });
+// //FUNZIONI BOTTONE
+
+// CICLO ARRAY DESCRIZIONE FOTO
+for(let i = 0; i < title.length; i++){
+  console.log(title[i]);
+  const titleImg = document.createElement("h3");
+  if(i === contatore){
+    titleImg.classList.add("title");
+  }
+
+  titleImg.innerHTML = `<div>${title[i]}</div>`;
+  item.append(titleImg);
+}
