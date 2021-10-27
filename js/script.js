@@ -25,48 +25,67 @@ const text = [
 // //ARRAY CONSEGNATI
 
 // DICHIARO LE VARIABILI
-const item = document.getElementsByClassName("item");
-const itemSmall = document.getElementsByClassName("item-small");
+("item-small");
 const prev = document.querySelector(".prev");
 const next = document.querySelector(".next");
+const imgBig = document.querySelector(".ab-col10");
+const imgSmall = document.querySelector(".ab-col2");
 
 // CONTATORE PER CICLARE LE FOTO
 let contatore = 0;
 
-// FUNZIONI BOTTONE
-prev.addEventListener("click",function(){
-  console.log(item[contatore]);
-  item[contatore].classList.remove("active");
-  itemSmall[contatore].classList.remove("active-img");
-  console.log(item[contatore]);
-  contatore--;
-  if(contatore < 0) contatore = item.length -1;
-  console.log(contatore);
-  item[contatore].classList.add("active");
-  itemSmall[contatore].classList.add("active-img")
+
+// CICLO ARRAY DESCRIZIONE FOTO
+for(let i = 0; i < items.length; i++){
+  const imageCont = document.createElement("div");
+  const littleRightImage = document.createElement("div");
+
+  imageCont.className = "item";
+  littleRightImage.className = "item-small";
+
+  if(i === contatore){
+    imageCont.classList.add("active");
+    littleRightImage.classList.add("active-img");
+  }
+
+  imageCont.innerHTML = `<img class="w-100" src=${items[i]} alt="immagine grande">
+
+  
+  <div class="description">
+  <h4>${title[i]}</h4>
+  ${text[i]}</div>
+  `;
+  littleRightImage.innerHTML = `<img src=${items[i]} alt="immagine piccola">`;
+
+  imgBig.append(imageCont);
+  imgSmall.append(littleRightImage);
+  
+};
+
+
+const imageCont = document.getElementsByClassName("item");
+const littleRightImage = document.getElementsByClassName("item-small");
+let index = 0;
+
+prev.addEventListener("click", function(){
+  imageCont[index].classList.remove("active");
+  littleRightImage[index].classList.remove("active-img");
+  index--;
+
+  if(index < 0) index = imageCont.length -1;
+  imageCont[index].classList += " active";
+
+  littleRightImage[index].classList += " active-img";
+
 });
 
 next.addEventListener("click", function(){
-  console.log(item[contatore]);
-  item[contatore].classList.remove("active");
-  itemSmall[contatore].classList.remove("active-img");
-  console.log(item[contatore]);
-  contatore++;
-  if(contatore > item.length -1) contatore = 0;
-  console.log(contatore);
-  item[contatore].classList.add("active");
-  itemSmall[contatore].classList.add("active-img")
+  imageCont[index].classList.remove("active");
+  littleRightImage[index].classList.remove("active-img");
+  index++;
+
+  if(index > imageCont.length -1) index = 0;
+  imageCont[index].classList += " active";
+
+  littleRightImage[index].classList += " active-img";
 });
-// //FUNZIONI BOTTONE
-
-// CICLO ARRAY DESCRIZIONE FOTO
-for(let i = 0; i < title.length; i++){
-  console.log(title[i]);
-  const titleImg = document.createElement("div");
-  item.append(titleImg);
-  if(i === contatore){
-    titleImg.classList.add("title");
-  }
-
-  titleImg.innerHTML = `<h3>${title[i]}</h3>`;
-}

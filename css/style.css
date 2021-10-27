@@ -9,12 +9,13 @@
   height: 500px;
 }
 
-.ab-col{
+.ab-col2{
   position: relative;
 }
 
 .prev, .next{
   position: absolute;
+  z-index: 999;
   left: 50%;
   transform: translateX(-50%);
   width: 25px;
@@ -27,11 +28,11 @@
 }
 
 .prev{
-  top: 4px;
+  top: 5px;
 }
 
 .next{
-  bottom: 6px;
+  bottom: 5px;
 }
 
 .prev:hover, .next:hover{
@@ -40,9 +41,10 @@
 
 .item{
   display: none;
+  position: relative;
 }
 
-.item.active{
+.active{
   display: block;
 }
 
@@ -53,7 +55,7 @@
 
 .col-2 .item-small img{
   width: 100%;
-  height: 100px;
+  height:100px;
   object-fit: cover;
   filter: brightness(50%);
 }
@@ -70,4 +72,13 @@
   font-size: 25px;
   color: black;
   font-weight: bold;
+}
+
+.description{
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  text-align: right;
+  color: white;
+  width: 500px;
 }
