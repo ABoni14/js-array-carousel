@@ -26,6 +26,7 @@ const text = [
 
 // DICHIARO LE VARIABILI
 const item = document.getElementsByClassName("item");
+const itemSmall = document.getElementsByClassName("item-small");
 const prev = document.querySelector(".prev");
 const next = document.querySelector(".next");
 
@@ -36,19 +37,23 @@ let contatore = 0;
 prev.addEventListener("click",function(){
   console.log(item[contatore]);
   item[contatore].classList.remove("active");
+  itemSmall[contatore].classList.remove("active-img");
   console.log(item[contatore]);
   contatore--;
   if(contatore < 0) contatore = item.length -1;
   console.log(contatore);
-  item[contatore].classList.add("active")
+  item[contatore].classList.add("active");
+  itemSmall[contatore].classList.add("active-img")
 });
 
 next.addEventListener("click", function(){
   console.log(item[contatore]);
   item[contatore].classList.remove("active");
+  itemSmall[contatore].classList.remove("active-img");
   console.log(item[contatore]);
   contatore++;
   if(contatore > item.length -1) contatore = 0;
   console.log(contatore);
   item[contatore].classList.add("active");
+  itemSmall[contatore].classList.add("active-img")
 });

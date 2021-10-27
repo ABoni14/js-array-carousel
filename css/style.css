@@ -15,7 +15,7 @@
 
 .prev, .next{
   position: absolute;
-  left: 47%;
+  left: 50%;
   transform: translateX(-50%);
   width: 25px;
   height: 25px;
@@ -23,16 +23,15 @@
   text-align: center;
   line-height: 25px;
   border-radius: 50%;
-  margin: 10px;
   cursor: pointer;
 }
 
 .prev{
-  top: 2px;
+  top: 4px;
 }
 
 .next{
-  bottom: 2px;
+  bottom: 6px;
 }
 
 .prev:hover, .next:hover{
@@ -59,7 +58,7 @@
   filter: brightness(50%);
 }
 
-.active.active-img{
+.active-img{
   filter: brightness(200%);
   box-sizing: border-box;
   border: 2px solid #dadad4;
